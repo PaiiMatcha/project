@@ -1,0 +1,313 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #3498db, #8e44ad);
+    --secondary-gradient: linear-gradient(135deg, #2c3e50, #34495e);
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --accent-color: #e74c3c;
+    --orange-gradient: linear-gradient(135deg, #FFA500, #FF6347);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--primary-gradient);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav-links li {
+    margin-right: 1rem;
+}
+
+/* Hapus atau komentari bagian ini
+.login-button {
+    margin-left: 1rem;
+    background: var(--secondary-gradient);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+*/
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+main {
+    padding-top: 60px;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-gradient);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.hero-description {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto 0.5rem;
+    color: white;
+    line-height: 1.4;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 900;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.subject-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transform: rotate(30deg);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.subject-card:hover::before {
+    opacity: 0.1;
+    transform: rotate(0deg);
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subject-card h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.subject-card ul {
+    list-style-type: none;
+}
+
+.subject-card li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.subject-link {
+    margin-top: auto;
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.subject-link:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+footer {
+    flex-shrink: 0;
+    background: var(--secondary-gradient);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row; /* Ubah menjadi row */
+        justify-content: space-between; /* Distribusi merata */
+        width: 100%;
+        background: var(--primary-gradient);
+        padding: 0.5rem;
+        list-style-type: none;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem; /* Ukuran font lebih kecil untuk layar kecil */
+        padding: 0.3rem 0.5rem;
+        white-space: nowrap; /* Mencegah teks wrapping */
+    }
+
+    .menu-toggle {
+        display: none; /* Sembunyikan tombol toggle menu */
+    }
+
+    /* Hapus atau komentari bagian ini
+    .login-button {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    */
+
+    .hero {
+        height: 40vh;
+        padding: 0.5rem 0.4rem;
+    }
+
+    .logo-image {
+        max-width: 250px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-description {
+        font-size: 0.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
